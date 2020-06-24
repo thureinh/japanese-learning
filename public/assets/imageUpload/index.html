@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - 11/100 100DaysCSS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="frame">
+	<div class="center">
+		<div class="title">
+			<h1>Drop file to upload</h1>
+		</div>
+
+		<div class="dropzone">
+			<img id="blah" src="#" alt="my profile" class="upload-icon"/>
+			<input type="file" class="upload-input" onchange="readURL(this);"/>
+		</div>
+
+		<button type="button" class="btn" name="uploadbutton">Upload file</button>
+
+	</div>
+</div>
+<!-- original pen: https://codepen.io/roydigerhund/pen/ZQdbeN  -->
+
+<!-- NO JS ADDED YET -->
+<!-- partial -->
+  <script src='https://100dayscss.com/codepen/js/jquery.min.js'></script><script  src="./script.js"></script>
+  <script type="text/javascript">
+  	function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .width(100)
+                    .height(100)
+                    .css("margin-top", "0px");
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+  </script>
+</body>
+</html>
